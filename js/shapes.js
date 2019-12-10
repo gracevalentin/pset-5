@@ -31,28 +31,62 @@ window.onload = function() {
  * Exercise 1.
  */
 
-const sayHello = function() {
-    // write your exercise 1 code here
+const sayHello = function draw() {
+    const ctx = document.getElementById('student-canvas-1').getContext('2d');
+    let input = prompt("Message:");
+    ctx.font = '48px sans-serif';
+    ctx.strokeText(input, 30, 70);
+
+  //still needs to clear canvas before drawing, continuously prompt for valid message, draw nothing and break out of cycle if cancel is clicked, message text cannot exceed 50 characters, message text cannot exceed the bounds of the canvas
 };
 
 /*
  * Exercise 2.
  */
 
-const drawRectangle = function() {
-    // write your exercise 2 code here
+const drawRectangle = function draw() {
+  const ctx = document.getElementById('student-canvas-2').getContext('2d');
+  let width = prompt("Width:");
+  let height = prompt("Height:");
+  let x = prompt("X:");
+  let y = prompt("Y:");
+  ctx.strokeRect(x, y, width, height);
+  //still needs to clear canvas before drawing, continuously prompt for valid coordinates and dimensions, draw nothing and break out of cycle if cancel is clicked, width of the rectangle must be between 1 and the width of the canvas, height of the rectangle must be between 1 and the height of the canvas, the x- and y- coordinates cannot be less than 1,  rectangle cannot exceed the bounds of the canvas
 };
 
 /*
  * Exercise 3.
  */
 
-const drawColoredRectangle = function() {
-  const canvas = document.getElementById('student-canvas-3');
-  const ctx = canvas.getContext('2d');
+const drawColoredRectangle = function draw() {
+  const ctx = document.getElementById('student-canvas-3').getContext('2d');
+  let color = prompt("Color:");
+  var color = color.toUpperCase();
 
+  if (color = 'BLACK'){
   ctx.fillStyle = 'black';
-  ctx.fillRect(10,10,100,50)
+ }
+  if (color = 'BLUE'){
+    ctx.fillStyle = 'blue';
+  }
+  if (color = 'GREEN'){
+    ctx.fillStyle = 'green';
+  }
+  if (color = 'ORANGE'){
+    ctx.fillStyle = 'orange';
+  }
+  if (color = 'PURPLE'){
+    ctx.fillStyle = 'purple';
+  }
+  if (color = 'RED'){
+    ctx.fillStyle = 'red';
+  }
+  if (color = 'YELLOW'){
+    ctx.fillStyle = 'yellow';
+  }
+
+  ctx.fillRect(10, 10, 100, 50);
+  //still needs to clear canvas before drawing, continuously prompt for valid color, draw nothing and break out of cycle if cancel is clicked
 };
 
 /*
