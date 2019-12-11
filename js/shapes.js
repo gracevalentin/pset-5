@@ -34,10 +34,11 @@ window.onload = function() {
 const sayHello = function draw() {
     const ctx = document.getElementById('student-canvas-1').getContext('2d');
     let input = prompt("Message:");
-    ctx.font = '48px sans-serif';
-    ctx.strokeText(input, 30, 70);
-
-  //still needs to clear canvas before drawing, continuously prompt for valid message, draw nothing and break out of cycle if cancel is clicked, message text cannot exceed 50 characters, message text cannot exceed the bounds of the canvas
+    if (input != null){
+      ctx.font = '48px sans-serif';
+      ctx.strokeText(input, 30, 70);
+    }
+  //still needs to clear canvas before drawing, continuously prompt for valid message, message text cannot exceed 50 characters, message text cannot exceed the bounds of the canvas
 };
 
 /*
@@ -50,8 +51,10 @@ const drawRectangle = function draw() {
   let height = prompt("Height:");
   let x = prompt("X:");
   let y = prompt("Y:");
-  ctx.strokeRect(x, y, width, height);
-  //still needs to clear canvas before drawing, continuously prompt for valid coordinates and dimensions, draw nothing and break out of cycle if cancel is clicked, width of the rectangle must be between 1 and the width of the canvas, height of the rectangle must be between 1 and the height of the canvas, the x- and y- coordinates cannot be less than 1,  rectangle cannot exceed the bounds of the canvas
+  if (width != null && height != null && x != null, y != null){
+    ctx.strokeRect(x, y, width, height);
+  }
+  //still needs to clear canvas before drawing, continuously prompt for valid coordinates and dimensions, width of the rectangle must be between 1 and the width of the canvas, height of the rectangle must be between 1 and the height of the canvas, the x- and y- coordinates cannot be less than 1,  rectangle cannot exceed the bounds of the canvas
 };
 
 /*
@@ -61,27 +64,27 @@ const drawRectangle = function draw() {
 const drawColoredRectangle = function draw() {
   const ctx = document.getElementById('student-canvas-3').getContext('2d');
   let color = prompt("Color:");
-  var color = color.toUpperCase();
+  let color2 = color.toUpperCase();
 
-  if (color = 'BLACK'){
+  if (color2 == 'BLACK'){
   ctx.fillStyle = 'black';
  }
-  if (color = 'BLUE'){
+  if (color2 == 'BLUE'){
     ctx.fillStyle = 'blue';
   }
-  if (color = 'GREEN'){
+  if (color2 == 'GREEN'){
     ctx.fillStyle = 'green';
   }
-  if (color = 'ORANGE'){
+  if (color2 == 'ORANGE'){
     ctx.fillStyle = 'orange';
   }
-  if (color = 'PURPLE'){
+  if (color2 == 'PURPLE'){
     ctx.fillStyle = 'purple';
   }
-  if (color = 'RED'){
+  if (color2 == 'RED'){
     ctx.fillStyle = 'red';
   }
-  if (color = 'YELLOW'){
+  if (color2 == 'YELLOW'){
     ctx.fillStyle = 'yellow';
   }
 
@@ -102,7 +105,7 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
+    // write your exercise 5 code here
 };
 
 /*
@@ -110,5 +113,5 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-    // write your exercise 5 code here
+    // write your exercise 6 code here
 };
